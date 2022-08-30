@@ -10,7 +10,7 @@
         <table>
             <tr>
                 <td>Id</td>
-                <td>${id}</td>
+                <td> </td>
             </tr>
             <tr>
                 <td>Age</td>

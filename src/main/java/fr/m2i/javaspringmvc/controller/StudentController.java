@@ -32,7 +32,7 @@ public class StudentController {
 
     /*
      * 2eme solution -> notre méthode travaille avec ModelAndView on doit spécifier dans l'ordre
-     *                 le nom de la vue qu'on veut afficher, le nom du modelAttribute utiliser par le formulaire
+     *                 le nom de la vue qu'on veut afficher, le nom du modelAttribute utilisé par le formulaire
      *                 la valeur de l'attribut
      *
      *                 /!\ DANS CHAQUE METHODE GET ou POST JE VAIS DEVOIR RENSEIGNER L'ATTRIBUT "studentForm" /!\
@@ -45,7 +45,7 @@ public class StudentController {
 
     /*
      * 3eme solution -> On travaille en injection de dépendance avec la méthode 'addStudentForm' 
-     *                 donc notre GET a juste besoin de retourner le de la vue a afficher
+     *                 donc notre GET a juste besoin de retourner le nom de la vue a afficher
      */
     @GetMapping("/student")
     public String showStudentForm() {
