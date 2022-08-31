@@ -8,10 +8,10 @@
     </head>
     <body>
         <h2> Credit disponible </h2>
-        <div>${balance} $ </div>
+        <div>${balance}$ </div>
         <hr />
         <h2> Liste des produits disponibles </h2>
-  <form  action="DistributeurControlleur" method="GET">     
+  <form  method="GET">     
         <table>
              <tr>
             <th>Numéro de produit</th>
@@ -19,12 +19,12 @@
             <th>Quantité</th>
             <th>Prix</th>
             </tr>
-            <c:forEach items="${ products}" var="produit">
+             <c:forEach var="p" items="${products}">
                 <tr>
-                    <td><c:out value="${ produit.id }"></c:out></td>
-                    <td><c:out value="${ produit.name }"></c:out></td>
-                    <td><c:out value="${ produit.quantity }"></c:out></td>
-                    <td><c:out value="${ produit.price}"></c:out></td>
+                    <td>${p.id}</td>
+                    <td>${p.name}</td>
+                    <td>${p.quantity}</td>
+                    <td>${p.price}</td>
                 </tr>
             </c:forEach>
                       
@@ -32,22 +32,37 @@
   </form>
         <hr /><!-- comment -->
         <h2> Ajouter du credit </h2>
-        <form:form method="POST" action="/addBalance"  modelAttribute="userForm">
+        <form:form method="POST" action="/addBalance"  modelAttribute="userBalanceForm">
             
             <table>
                 <tr>
                     <td>
-                        <form:input  path="balance" type="number" />
+                        <form:input  path="balance" type="number"  step="0.01"/>
                         <form:errors path="balance" />
                     </td>
                     <td>
                         <input type="submit" value="ajouter du credit" />
                     </td>
                 </tr>
-            </table> comment 
+            </table> 
     </form:form>  
             <hr />
                    <h2> Acheter un produit </h2>
+                   <label> Entrez le numéro du produit à acheter : </label>
+           <form:form method="POST" action="/buyProduct"  modelAttribute="productBuyForm">
+            
+            <table>
+                <tr>
+                    <td>
+                        <form:input  path="id" type="number"  />
+                        <form:errors path="id" />
+                    </td>
+                    <td>
+                        <input type="submit" value="Acheter un produit" />
+                    </td>
+                </tr>
+            </table> 
+    </form:form>  
         
     </body>
 </html>

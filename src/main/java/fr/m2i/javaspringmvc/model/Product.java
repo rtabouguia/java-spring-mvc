@@ -26,7 +26,7 @@ public class Product {
         public String name;
         
         @Column(name="price", length=5)
-        public Float price;
+        public Double price;
         
         @Column(name="quantity_product", length=10)
         public int quantity;
@@ -47,11 +47,11 @@ public class Product {
         this.name = name;
     }
 
-    public Float getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Float price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 

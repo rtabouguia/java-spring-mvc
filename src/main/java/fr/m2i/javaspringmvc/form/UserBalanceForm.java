@@ -4,32 +4,19 @@
  */
 package fr.m2i.javaspringmvc.form;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.Positive;
+import javax.validation.constraints.*;
 
 /**
  *
  * @author RAISA
  */
-public class UserForm {
+public class UserBalanceForm {
 
-   private Long id;
-        
-    @Positive
+    @Min(value=1, message="le montant que vous souhaitez ajouter doit être positif")
+     @NotNull(message = "Le champs 'montant' est obligatoire")
     private Double balance;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Double getBalance() {
+   public Double getBalance() {
         return balance;
     }
 
