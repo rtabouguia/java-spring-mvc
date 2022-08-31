@@ -2,24 +2,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package fr.m2i.javaspringmvc.model;
+package fr.m2i.javaspringmvc.form;
 
-import javax.persistence.*;
-import javax.validation.constraints.*;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.Positive;
+
 /**
  *
  * @author RAISA
  */
+public class UserForm {
 
-@Entity
-@Table(name="users")
-public class User {
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
+   private Long id;
         
-        @Column(name="balance")
-        private Double balance;
+    @Positive
+    private Double balance;
 
     public Long getId() {
         return id;

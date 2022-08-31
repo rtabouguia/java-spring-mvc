@@ -30,5 +30,24 @@
                       
         </table>
   </form>
+        <hr /><!-- comment -->
+        <h2> Ajouter du credit </h2>
+        <form:form method="POST" action="/addBalance"  modelAttribute="userForm">
+            
+            <table>
+                <tr>
+                    <td>
+                        <form:input  path="balance" type="number" />
+                        <form:errors path="balance" />
+                    </td>
+                    <td>
+                        <input type="submit" value="ajouter du credit" />
+                    </td>
+                </tr>
+            </table> comment 
+    </form:form>  
+            <hr />
+                   <h2> Acheter un produit </h2>
+        
     </body>
 </html>

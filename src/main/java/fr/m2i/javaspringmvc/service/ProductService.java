@@ -26,10 +26,8 @@ public class ProductService {
     
     // lister les produits
     
-    public List<Product> findAll() {
-        
+    public List<Product> findAll() { 
         return repo.findAll();
-      
     }
     // find by id
     

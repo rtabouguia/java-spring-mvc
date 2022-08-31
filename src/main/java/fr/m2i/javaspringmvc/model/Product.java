@@ -29,7 +29,7 @@ public class Product {
         public Float price;
         
         @Column(name="quantity_product", length=10)
-        public Long quantity;
+        public int quantity;
 
     public Long getId() {
         return id;
@@ -55,11 +55,11 @@ public class Product {
         this.price = price;
     }
 
-    public Long getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Long quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
                 

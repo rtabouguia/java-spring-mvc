@@ -53,7 +53,7 @@ public class StudentController {
     }
 
     @PostMapping("/addStudent")
-    public String addStudent(@ModelAttribute @Valid StudentForm student,
+    public String addStudent(@ModelAttribute("studentForm") @Valid StudentForm student,
             BindingResult result, ModelMap model) {
 
         if (result.hasErrors()) {

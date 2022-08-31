@@ -4,14 +4,19 @@
  */
 package fr.m2i.javaspringmvc.controller;
 
+import fr.m2i.javaspringmvc.form.UserForm;
 import fr.m2i.javaspringmvc.model.Product;
 import fr.m2i.javaspringmvc.service.ProductService;
 import fr.m2i.javaspringmvc.service.UserService;
 import java.util.List;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  *
@@ -32,10 +37,19 @@ private final UserService userService;
     public String showDistributeurPage() {
         return "distributeur";
     }
+    
+ 
+      @PostMapping("/addBalance")
+    public String addBalance(@ModelAttribute("userForm") @Valid UserForm user,
+            BindingResult result, ModelMap model) {
 
-    @ModelAttribute("balance")
-    public Double addBalanceBean() throws Exception {
-        return userService.getBalance();
+        if (result.hasErrors()) {
+            return "user";
+        }
+
+        model.addAttribute("balance", user.getBalance());
+
+        return "result";
     }
 
     @ModelAttribute("products")
